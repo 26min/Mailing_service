@@ -1,0 +1,40 @@
+{% extends 'mailings/base.html' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<h1>Сервис рассылок</h1>
+
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h3>{{ total_mailings }}</h3>
+                <p>Всего рассылок</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h3>{{ active_mailings }}</h3>
+                <p>Активных рассылок</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h3>{{ total_recipients }}</h3>
+                <p>Получателей</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a href="{% url 'mailings:mailing_list' %}" class="btn btn-primary">Все рассылки</a>
+    <a href="{% url 'mailings:recipient_list' %}" class="btn btn-outline-primary">Все получатели</a>
+    <a href="{% url 'mailings:message_list' %}" class="btn btn-outline-primary">Все сообщения</a>
+</div>
+{% endblock %}

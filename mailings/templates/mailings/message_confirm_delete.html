@@ -1,0 +1,10 @@
+{% extends 'mailings/base.html' %}
+{% block content %}
+<h2>Удалить сообщение?</h2>
+<p>{{ object.subject }}</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Удалить</button>
+    <a href="{% url 'mailings:message_list' %}" class="btn btn-outline-secondary">Отмена</a>
+</form>
+{% endblock %}
